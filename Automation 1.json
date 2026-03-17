@@ -1,0 +1,175 @@
+{
+  "name": "Automation 1",
+  "nodes": [
+    {
+      "parameters": {
+        "formTitle": "Personal info",
+        "formDescription": "enter your personal information for consultation of ai and machine learning.",
+        "formFields": {
+          "values": [
+            {
+              "fieldLabel": "Name"
+            },
+            {
+              "fieldLabel": "E-mail",
+              "fieldType": "email"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.formTrigger",
+      "typeVersion": 2.5,
+      "position": [
+        0,
+        0
+      ],
+      "id": "ccd4ecd0-d957-45c3-b08e-c4f975ac8796",
+      "name": "On form submission",
+      "webhookId": "c25ed529-292c-4014-8729-6487ecf212e4"
+    },
+    {
+      "parameters": {
+        "operation": "append",
+        "documentId": {
+          "__rl": true,
+          "value": "1vtxxjUI8qPVYzw0SWg_mG3ylU2pnO6jKsBJwWzzI1EU",
+          "mode": "list",
+          "cachedResultName": "Automation 1",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1vtxxjUI8qPVYzw0SWg_mG3ylU2pnO6jKsBJwWzzI1EU/edit?usp=drivesdk"
+        },
+        "sheetName": {
+          "__rl": true,
+          "value": "gid=0",
+          "mode": "list",
+          "cachedResultName": "Sheet1",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1vtxxjUI8qPVYzw0SWg_mG3ylU2pnO6jKsBJwWzzI1EU/edit#gid=0"
+        },
+        "columns": {
+          "mappingMode": "defineBelow",
+          "value": {
+            "Name": "={{ $json.Name }}",
+            "Email": "={{ $json['E-mail'] }}",
+            "Time": "={{ $json.submittedAt }}"
+          },
+          "matchingColumns": [],
+          "schema": [
+            {
+              "id": "Name",
+              "displayName": "Name",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "Email",
+              "displayName": "Email",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "Time",
+              "displayName": "Time",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            }
+          ],
+          "attemptToConvertTypes": false,
+          "convertFieldsToString": false
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.googleSheets",
+      "typeVersion": 4.7,
+      "position": [
+        208,
+        0
+      ],
+      "id": "39574c18-9884-4c7e-a1d9-7157918102a4",
+      "name": "Append row in sheet",
+      "credentials": {
+        "googleSheetsOAuth2Api": {
+          "id": "KW9mec3NdNWiZf1h",
+          "name": "Google Sheets OAuth2 API"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "sendTo": "jonsnow81951@gmail.com",
+        "subject": "=for consultation",
+        "emailType": "text",
+        "message": "=Hello {{ $json.Name }} ,\n\nwelcome to our consultation service.",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.gmail",
+      "typeVersion": 2.2,
+      "position": [
+        416,
+        0
+      ],
+      "id": "9addbd20-6f3d-46a8-977d-064682597dc1",
+      "name": "Send a message",
+      "webhookId": "61048651-011f-46fb-9ae8-61197d024908",
+      "credentials": {
+        "gmailOAuth2": {
+          "id": "a0rzn47buENBH9fT",
+          "name": "Gmail account"
+        }
+      }
+    }
+  ],
+  "pinData": {},
+  "connections": {
+    "On form submission": {
+      "main": [
+        [
+          {
+            "node": "Append row in sheet",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Append row in sheet": {
+      "main": [
+        [
+          {
+            "node": "Send a message",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "active": false,
+  "settings": {
+    "executionOrder": "v1",
+    "binaryMode": "separate",
+    "availableInMCP": false
+  },
+  "versionId": "5136054f-4a1d-4134-a085-ff655346bf7b",
+  "meta": {
+    "templateCredsSetupCompleted": true,
+    "instanceId": "6b66c59c74220cc1e59e5f6880a2547a8c2eecdcce07fc723d44c1e833f8b94e"
+  },
+  "id": "YVV58nIjy0kjjg50",
+  "tags": [
+    {
+      "updatedAt": "2026-03-17T17:38:28.801Z",
+      "createdAt": "2026-03-17T17:38:28.801Z",
+      "id": "fJ2VO7E4TfKa3Cle",
+      "name": "practice 1"
+    }
+  ]
+}
