@@ -56,6 +56,3 @@ User receives a welcome email after submitting the form.
 
 ## 👨‍💻 Author
 Yagnesh Gadhethariya
-
----
-⭐ Star this repository if you like it!
