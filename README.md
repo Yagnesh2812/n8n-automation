@@ -1,94 +1,61 @@
-🚀 n8n Automation 1 – Form to Google Sheets + Email Notification
-📌 Overview
+# 🚀 n8n Form Automation – Google Sheets + Email
 
-This project is an automated workflow built using n8n. It collects user information through a form, stores the data in Google Sheets, and sends a confirmation email to the user.
+🔥 Beginner-friendly automation project using n8n
 
-⚙️ Workflow Functionality
+## 📌 Overview
+This project is an automated workflow built using n8n. It collects user data through a form, stores it in Google Sheets, and sends a confirmation email automatically.
 
-This automation performs the following steps:
+## ⚙️ Features
+- Collects user Name and Email via form
+- Saves data to Google Sheets
+- Sends automatic email confirmation
+- Tracks submission time
 
-Captures user input (Name & Email) via a form.
+## 🔄 Workflow
+Form Submission → Google Sheets → Email Notification
 
-Stores the submitted data into a Google Sheet.
+## 🛠️ Technologies Used
+- n8n
+- Google Sheets API
+- Gmail API
 
-Sends a confirmation email to the user after submission.
+## 📥 How to Use
+1. Download the JSON file from this repository  
+2. Open n8n  
+3. Click **Import Workflow**  
+4. Upload the JSON file  
+5. Configure:
+   - Google Sheets credentials  
+   - Gmail credentials  
+6. Activate the workflow  
+7. Use the form URL to test  
 
-🔄 Workflow Structure
+## 📊 Data Stored
+- Name  
+- Email  
+- Submission Time  
 
-Form Trigger → Collects user details
+## 📧 Email Output
+User receives a welcome email after submitting the form.
 
-Google Sheets Node → Saves data (Name, Email, Time)
+## 💡 Use Cases
+- Lead generation  
+- Contact forms  
+- Consultation booking  
+- Data collection automation  
 
-Gmail Node → Sends confirmation message
+## 🔐 Requirements
+- Google Account  
+- n8n (Cloud or Self-hosted)  
 
-🛠️ Tools & Technologies
+## 🚀 Future Improvements
+- Add input validation  
+- Personalize email content  
+- Add WhatsApp/SMS integration  
+- Connect with CRM tools  
 
-n8n (Workflow Automation)
-
-Google Sheets API
-
-Gmail API
-
-📥 How to Use
-
-Download the JSON workflow file.
-
-Open n8n.
-
-Click Import Workflow.
-
-Upload the JSON file.
-
-Configure:
-
-Google Sheets credentials
-
-Gmail credentials
-
-Activate the workflow.
-
-Use the form URL to test the automation.
-
-📊 Data Stored
-
-The following fields are stored in Google Sheets:
-
-Name
-
-Email
-
-Submission Time
-
-📧 Email Notification
-
-After form submission, the user receives a welcome email confirming their registration for consultation.
-
-💡 Use Cases
-
-Lead collection forms
-
-Consultation booking systems
-
-Basic CRM data entry automation
-
-Email response automation
-
-🔐 Requirements
-
-Google account (for Sheets & Gmail integration)
-
-n8n instance (cloud or self-hosted)
-
-📌 Future Improvements
-
-Add validation for form inputs
-
-Send personalized emails
-
-Integrate with CRM tools
-
-Add WhatsApp or SMS notifications
-
-👨‍💻 Author
-
+## 👨‍💻 Author
 Yagnesh Gadhethariya
+
+---
+⭐ Star this repository if you like it!
